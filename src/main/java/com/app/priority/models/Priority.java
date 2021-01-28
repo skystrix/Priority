@@ -1,15 +1,12 @@
-package com.app.Priority;
+package com.app.priority.models;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
-@RestController
 public class Priority {
     @Id
     @GeneratedValue

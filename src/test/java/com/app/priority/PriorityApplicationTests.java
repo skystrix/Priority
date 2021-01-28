@@ -1,4 +1,4 @@
-package com.app.Priority;
+package com.app.priority;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

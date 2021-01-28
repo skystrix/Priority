@@ -1,5 +1,7 @@
-package com.app.Priority;
+package com.app.priority.controllers;
 
+import com.app.priority.repository.PriorityDao;
+import com.app.priority.models.Priority;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +19,8 @@ public class PriorityController {
 
         for(Priority p : priorities){
             Priority n = new Priority();
-            n.priorityID = p.priorityID;
-            n.priority = p.priority;
+            n.setPriorityID(p.getPriorityID());
+            n.setPriority(p.getPriority());
             priorityDao.save(n);
         }
         return "Saved Priority";
