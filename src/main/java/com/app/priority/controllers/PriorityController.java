@@ -2,7 +2,10 @@ package com.app.priority.controllers;
 
 import com.app.priority.repository.PriorityDao;
 import com.app.priority.models.Priority;
+import com.app.priority.service.PriorityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,21 +15,16 @@ import java.util.List;
 public class PriorityController {
     @Autowired
     private PriorityDao priorityDao;
+    @Autowired
+    public PriorityService priorityService;
 
-    @PostMapping(path="/add")
-    public @ResponseBody
-    String addNewPriority (@RequestBody List<Priority> priorities) {
-
-        for(Priority p : priorities){
-            Priority n = new Priority();
-            n.setPriorityID(p.getPriorityID());
-            n.setPriority(p.getPriority());
-            priorityDao.save(n);
-        }
-        return "Saved Priority";
+    @PostMapping(path="/")
+    @ResponseBody
+    public ResponseEntity<List<Priority>> addNewPriority (@RequestBody List<Priority> priorities) {
+        return new ResponseEntity<>(priorityService.addNewPriority(priorities), HttpStatus.OK);
     }
 
-    @GetMapping(path="/all")
+    @GetMapping(path="/")
     public @ResponseBody
     Iterable<Priority> getAllUsers() {
         return priorityDao.findAll();

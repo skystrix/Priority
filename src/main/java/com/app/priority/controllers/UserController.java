@@ -20,7 +20,7 @@ public class UserController {
     UserService userService;
 
     @PostMapping(path="/")
-    public ResponseEntity<List<User>> addNewPriority (@RequestBody List<User> users) {
+    public ResponseEntity<List<User>> addNewUser (@RequestBody List<User> users) {
         return new ResponseEntity<>(userService.addNewUser(users), HttpStatus.OK);
     }
 

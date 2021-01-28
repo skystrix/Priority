@@ -6,10 +6,12 @@ import com.app.priority.models.UserPriorities;
 import com.app.priority.repository.PriorityDao;
 import com.app.priority.service.PriorityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PriorityServiceImpl implements PriorityService {
     @Autowired
     PriorityDao priorityDao;
