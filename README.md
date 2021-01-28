@@ -3,6 +3,10 @@
   
 #### APIs:  
 
+**Add a User**  
+Method: POST   
+http://localhost:8080/user/  
+  
 **Get all users**  
 Method: GET   
 http://localhost:8080/user/  
@@ -18,9 +22,9 @@ http://localhost:8080/priority/
 **Add a Priority Rating for a User:**  
 Method: POST  
 http://localhost:8080/userpriority
-  
-**See all Priorities:**  
-Method: GET  
-http://localhost:8080/priority  
 
- 
+**See all Priority Ratings for every User:**  
+Method: GET    
+http://localhost:8080/userpriority
+  
+
